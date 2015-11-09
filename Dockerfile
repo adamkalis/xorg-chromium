@@ -6,6 +6,6 @@ ONBUILD WORKDIR /usr/src/app
 ONBUILD RUN DEBIAN_FRONTEND=noninteractive JOBS=MAX npm install --unsafe-perm
 
 RUN apt-get update
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y xorg chromium
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y xorg chromium xinput
 
 CMD [ "npm", "start" ]

@@ -7,6 +7,6 @@ ONBUILD RUN DEBIAN_FRONTEND=noninteractive JOBS=MAX npm install --unsafe-perm
 ONBUILD RUN node_modules/.bin/bower --allow-root --config.interactive=false install
 
 RUN apt-get update
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y xorg chromium xinput
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y xorg chromium xinput cron
 
 CMD [ "npm", "start" ]

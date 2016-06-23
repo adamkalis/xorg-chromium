@@ -9,7 +9,7 @@ ONBUILD RUN node_modules/.bin/bower --allow-root --config.interactive=false inst
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y xorg chromium xinput cron lm-sensors libodbc1
 RUN wget http://repo.zabbix.com/zabbix/3.0/debian/pool/main/z/zabbix/zabbix-agent_3.0.1-1+jessie_amd64.deb
-RUN dpkg -i zabbix-agent_3.0.1-1+jessie_amd64.deb
+RUN dpkg -i zabbix-agent_3.0.3-1+jessie_amd64.deb
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y zabbix-agent
 
 CMD [ "npm", "start" ]

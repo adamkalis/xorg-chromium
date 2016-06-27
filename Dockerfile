@@ -2,6 +2,7 @@ FROM resin/nuc-node
 
 RUN mkdir -p /usr/src/app && ln -s /usr/src/app /app
 ONBUILD COPY . /usr/src/app
+ONBUILD COPY zabbix_agentd.conf /etc/zabbix/zabbix_agentd.conf
 ONBUILD WORKDIR /usr/src/app
 ONBUILD RUN DEBIAN_FRONTEND=noninteractive JOBS=MAX npm install --unsafe-perm
 ONBUILD RUN node_modules/.bin/bower --allow-root --config.interactive=false install
